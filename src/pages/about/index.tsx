@@ -17,22 +17,22 @@ export default function Home() {
               </h2>
             </RevealAnimation>
         </div>
-        <div className="px-4 mt-20">
+        <div className="px-4 mt-32">
           <div className="h-[100vh] border-l-[1.5px] space-y-8">
             <TimelineItem 
               role="Software Engineer"
               company="Google Developer Group McMaster"
               period="September 2025-Present"
-              description="Coding full-stack apps."
+              description="On the frontend team building a mobile app to connect local Hamiltonians to the music scene."
             />
             <TimelineItem 
               role="Software Engineer"
-              company="Google Developer Group McMaster"
+              company="BridgeSystems.net"
               period="September 2025-Present"
               description="Coding full-stack apps."
             />
             <TimelineItem 
-              role="Software Engineer"
+              role="Programming Instructor"
               company="Google Developer Group McMaster"
               period="September 2025-Present"
               description="Coding full-stack apps."
