@@ -6,7 +6,7 @@ import { RevealAnimation } from "@/components/ui/RevealAnimation";
 import Header from "@/components/ui/Header";
 
 export default function Home() {
-  const animationDelay: number = 0.7
+  const animationDelay: number = 0.9
   
   return (
     <>
