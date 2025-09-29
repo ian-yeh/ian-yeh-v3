@@ -1,22 +1,42 @@
 import Inner from "@/components/layout/Inner";
 import Header from "@/components/ui/Header";
+import { RevealAnimation } from "@/components/ui/RevealAnimation";
+import TimelineItem from "@/components/ui/TimelineItem";
 
 export default function Home() {
   return (
     <Inner>
       <div className="min-h-[100vh]">
-        <Header text="ABOUT ME" />
-        <div className="grid grid-cols-2 gap-8 mt-8 px-4">
-          <div className="flex flex-col gap-6 justify-end">
-            <h2 className="text-3xl font-normal tracking-widest">
-              I&apos;m a full-stack software engineer from Toronto, Canada.
-            </h2>
-            <p className="text-slate-600 font-light tracking-widest text-xl">
-              I care about building things for humans, by humans.
-            </p>
-            <button className="bg-black text-white px-6 py-3 rounded-full w-fit tracking-widest hover:bg-slate-800">
-              View my work
-            </button>
+        <div className="px-4">
+          <Header text="ABOUT ME" />
+        </div>
+        <div className="gap-8 mt-8 px-4">
+            <RevealAnimation delay={0.7}>
+              <h2 className="text-3xl font-normal tracking-widest">
+                A snapshot of my journey.
+              </h2>
+            </RevealAnimation>
+        </div>
+        <div className="px-4 mt-20">
+          <div className="h-[100vh] border-l-[1.5px] space-y-8">
+            <TimelineItem 
+              role="Software Engineer"
+              company="Google Developer Group McMaster"
+              period="September 2025-Present"
+              description="Coding full-stack apps."
+            />
+            <TimelineItem 
+              role="Software Engineer"
+              company="Google Developer Group McMaster"
+              period="September 2025-Present"
+              description="Coding full-stack apps."
+            />
+            <TimelineItem 
+              role="Software Engineer"
+              company="Google Developer Group McMaster"
+              period="September 2025-Present"
+              description="Coding full-stack apps."
+            />
           </div>
         </div>
       </div>
