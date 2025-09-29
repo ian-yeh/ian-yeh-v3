@@ -1,13 +1,20 @@
 "use client"
-import { motion, Variants } from "framer-motion"
+import { motion, Variant } from "framer-motion"
+import Link from "next/link"
 
 interface InnerProps {
   children: React.ReactNode
 }
 
+type AnimationVariants = {
+  initial: Variant
+  enter: Variant
+  exit: Variant
+}
+
 export default function Inner({ children }: InnerProps) {
-  
-  const anim = (variants: Variants) => {
+
+  const anim = (variants: AnimationVariants) => {
     return {
       initial: "initial",
       animate: "enter",
@@ -15,8 +22,8 @@ export default function Inner({ children }: InnerProps) {
       variants
     }
   }
-  
-  const slide = {
+
+  const slide: AnimationVariants = {
     initial: {
       top: "100vh"
     }, 
@@ -25,10 +32,14 @@ export default function Inner({ children }: InnerProps) {
     },
     exit: {
       top: "0",
+      transition: {
+        duration: 1,
+        ease: [0.76, 0, 0.24, 1]
+      }
     }
   }
-  
-  const opacity = {
+
+  const opacity: AnimationVariants = {
     initial: {
       opacity: 0
     },
@@ -40,18 +51,49 @@ export default function Inner({ children }: InnerProps) {
     },
     exit: {
       opacity: 0,
+    }
+  }
+
+  const perspective: AnimationVariants = {
+    initial: {
+      y: 0,
+      scale: 1,
+      opacity: 1
+    },
+    enter: {
+      y: 0,
+      scale: 1,
+      opacity: 1
+    },
+    exit: {
+      y: -100,
+      scale: 0.9,
+      opacity: 0.5,
       transition: {
-        duration: 0.3
+        duration: 1.3,
+        ease: [0.76, 0, 0.24, 1]
       }
     }
   }
-  
+
   return (
-    <div>
-        <motion.div {...anim(slide)} className="fixed inset-0 bg-white z-50" />
+    <div className="bg-black">
+      <motion.div {...anim(slide)} className="fixed inset-0 bg-white z-50" />
+      <motion.div {...anim(perspective)} className="bg-white">
         <motion.div {...anim(opacity)} > 
           {children}
+
+
+          {/*FOOTER*/}
+          <div className="fixed bottom-8 -translate-x-1/2 left-1/2">
+            <nav className="border-2 rounded-full px-8 py-3 flex gap-8">
+              <Link href="/" className="tracking-widest transition-colors">Home</Link>
+              <Link href="/about" className="tracking-widest transition-colors">About</Link>
+              <Link href="/contact" className="tracking-widest transition-colors">Contact</Link>
+            </nav>
+          </div>
         </motion.div>
+      </motion.div>
     </div>
   )
 }
