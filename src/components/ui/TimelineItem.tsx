@@ -23,13 +23,11 @@ export default function TimelineItem({
       <RevealAnimation delay={delay}>
         <div className="space-y-2">
           <div>
-            <div className="flex items-baseline space-x-6">
-              <h3 className="font-jetbrains text-3xl font-bold tracking-widest">{role}</h3>
-              <p className="font-jetbrains text-xl text-gray-500 mt-1">{period}</p>
-            </div>
-            <p className="font-jetbrains text-2xl text-slate-800 tracking-widest mt-4">{company}</p>
+            <h3 className="font-jetbrains text-5xl tracking-widest">{role}</h3>
+            <p className="font-jetbrains text-3xl text-slate-800 tracking-widest">{company}</p>
+            <p className="text-sm text-gray-500 mt-1">{period}</p>
           </div>
-          <p className="text-black text-xl mt-8 leading-relaxed tracking-widest max-w-2xl">
+          <p className="text-gray-300 leading-relaxed max-w-2xl">
             {description}
           </p>
         </div>
