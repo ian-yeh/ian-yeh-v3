@@ -33,10 +33,10 @@ export default function Home() {
               />
             </div>
             <div className="flex flex-col gap-6 justify-end">
-              <h2 className="text-3xl font-normal tracking-widest">
+              <h2 className="text-xl md:text-3xl font-normal tracking-widest">
                 I&apos;m a full-stack software engineer from Toronto, Canada.
               </h2>
-              <p className="text-slate-600 font-light tracking-widest text-xl">
+              <p className="text-slate-600 font-light tracking-widest text-lg md:text-xl">
                 I care about building things for humans, by humans.
               </p>
               <PrimaryButton />

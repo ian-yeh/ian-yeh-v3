@@ -15,8 +15,9 @@ const PrimaryButton = ({ children = "View my work" }) => {
 
   return (
     <div>
+      {/* Animated button for desktop */}
       <motion.button 
-        className="bg-black text-white h-12 px-6 py-3 rounded-full w-fit tracking-widest hover:bg-slate-800 overflow-hidden flex"
+        className="hidden md:flex bg-black text-white h-12 px-6 py-3 rounded-full w-fit tracking-widest hover:bg-slate-800 overflow-hidden"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
         initial={{ scale: 1 }}
@@ -31,6 +32,11 @@ const PrimaryButton = ({ children = "View my work" }) => {
           <p>{children}</p>
         </motion.div>
       </motion.button>
+
+      {/* Simple button for mobile */}
+      <button className="md:hidden bg-black text-white h-12 px-6 py-3 rounded-full w-fit tracking-widest text-sm">
+        {children}
+      </button>
     </div>
   )
 }
