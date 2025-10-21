@@ -29,7 +29,7 @@ export default function Home() {
                 alt="Gradient Image"
                 width={500}
                 height={300}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover rounded-3xl"
               />
             </div>
             <div className="flex flex-col gap-6 justify-end">
