@@ -1,17 +1,23 @@
 "use client"
 import { motion } from "framer-motion"
 import { useState, useRef, useEffect } from "react"
+import { useRouter } from "next/navigation"
 
 const PrimaryButton = ({ children = "View my work" }) => {
   const [isHovered, setIsHovered] = useState(false)
   const textRef = useRef<HTMLParagraphElement>(null)
   const [textHeight, setTextHeight] = useState(0)
+  const router = useRouter()
 
   useEffect(() => {
     if (textRef.current) {
       setTextHeight(textRef.current.offsetHeight)
     }
   }, [children])
+
+  const handleClick = () => {
+    router.push("/about")
+  }
 
   return (
     <div>
@@ -22,6 +28,7 @@ const PrimaryButton = ({ children = "View my work" }) => {
         onMouseLeave={() => setIsHovered(false)}
         initial={{ scale: 1 }}
         whileHover={{ scale: 1.03 }}
+        onClick={handleClick}
       >
         <motion.div
           animate={{ y: isHovered ? -textHeight*2 : 0 }}

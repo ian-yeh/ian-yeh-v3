@@ -6,7 +6,7 @@ import { RevealAnimation } from "@/components/ui/RevealAnimation";
 import Header from "@/components/ui/Header";
 
 export default function Home() {
-  const animationDelay: number = 0.9
+  const animationDelay: number = 0.7
   
   return (
     <>
@@ -29,7 +29,7 @@ export default function Home() {
                 alt="Gradient Image"
                 width={500}
                 height={300}
-                className="w-full h-full object-cover rounded-3xl"
+                className="w-full h-full object-cover rounded-4xl"
               />
             </div>
             <div className="flex flex-col gap-6 justify-end">
