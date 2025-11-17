@@ -23,11 +23,11 @@ const PrimaryButton = ({ children = "View my work" }) => {
     <div>
       {/* Animated button for desktop */}
       <motion.button 
-        className="hidden md:flex bg-black text-white h-12 px-6 py-3 rounded-full w-fit tracking-widest hover:bg-slate-800 overflow-hidden"
+        className="hidden md:flex border h-12 px-6 py-3 rounded-full w-fit tracking-widest font-normal hover:bg-black hover:text-white overflow-hidden"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
         initial={{ scale: 1 }}
-        whileHover={{ scale: 1.03 }}
+        whileHover={{ scale: 1 }}
         onClick={handleClick}
       >
         <motion.div

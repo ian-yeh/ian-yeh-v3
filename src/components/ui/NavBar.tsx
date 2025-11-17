@@ -44,8 +44,8 @@ const NavBar = () => {
   return (
     <div>
       {/*FOOTER*/}
-      <div className="bg-white fixed bottom-8 -translate-x-1/2 left-1/2">
-        <nav className="border-2 rounded-full px-8 py-3 flex gap-8">
+      <div className="bg-gray-200 rounded-full fixed bottom-8 -translate-x-1/2 left-1/2">
+        <nav className="rounded-full px-8 py-3 flex gap-8">
           <HoverLink text={"Home"} route={"/"} />
           <HoverLink text={"About"} route={"/about"} />
           <HoverLink text={"Contact"} route={"/contact"} />

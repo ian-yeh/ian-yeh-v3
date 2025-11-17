@@ -4,10 +4,11 @@ import Head from "next/head";
 import Image from "next/image";
 import { RevealAnimation } from "@/components/ui/RevealAnimation";
 import Header from "@/components/ui/Header";
+import Terminal from "@/components/ui/Terminal";
 
 export default function Home() {
   const animationDelay: number = 0.7
-  
+
   return (
     <>
       <Head>
@@ -18,30 +19,45 @@ export default function Home() {
       </Head>
       <Inner>
         <div className="h-[100vh]">
-          <Header text="IAN YEH" />
-          <RevealAnimation 
+          <div className="w-full justify-center flex">
+            <Header text="IAN YEH" />
+          </div>
+          <RevealAnimation
             delay={animationDelay}
-            className="grid grid-cols-2 gap-8 mt-8 px-4"
+            className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center mx-auto px-6"
           >
-            <div>
+            {/* main component --> image, terminal emulator, something to draw attention */}
+            <div className="h-[48vh]">
+              {/*
               <Image
-                src={"/gradient.jpg"}
+                src="/window.jpg"
                 alt="Gradient Image"
-                width={500}
-                height={300}
-                className="w-full h-full object-cover rounded-4xl"
+                width={900}
+                height={600}
+                className="w-full h-[48vh] object-cover"
               />
+              */}
+              <Terminal />
             </div>
-            <div className="flex flex-col gap-6 justify-end">
-              <h2 className="text-xl md:text-3xl font-normal tracking-widest">
-                I&apos;m a full-stack software engineer from Toronto, Canada.
-              </h2>
-              <p className="text-slate-600 font-light tracking-widest text-lg md:text-xl">
-                I care about building things for humans, by humans.
+
+            {/* Text block */}
+            <div className="h-full flex flex-col gap-6 items-center justify-end py-6 font-light">
+
+              <p className="text-slate-900 text-md md:text-md w-[50%] mb-2">
+                I&apos;m an 18 year old Software Engineer from Toronto, Canada. I care about building things for humans, by humans.
               </p>
-              <PrimaryButton />
+
+              <div className="w-[50%] flex flex-row space-x-10">
+                <PrimaryButton />
+                <div className="h-full flex flex-col justify-center items-center mr-5">
+                  <button className="" onClick={() => alert("hi")}>
+                    <p className="text-sm font-normal">See my resume</p>
+                  </button>
+                </div>
+              </div>
             </div>
           </RevealAnimation>
+
         </div>
       </Inner>
     </>
