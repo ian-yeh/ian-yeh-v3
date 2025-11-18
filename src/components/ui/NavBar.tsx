@@ -13,6 +13,8 @@ const HoverLink = ({ text, route }: HoverLinkProps) => {
   const textRef = useRef<HTMLParagraphElement>(null)
   const [textHeight, setTextHeight] = useState(0)
 
+  const scrollRef = useRef(null)
+
   useEffect(() => {
     if (textRef.current) {
       setTextHeight(textRef.current.offsetHeight)
@@ -41,6 +43,8 @@ const HoverLink = ({ text, route }: HoverLinkProps) => {
 }
 
 const NavBar = () => {
+  const sections = ["home", "about", "projects", "experience", "contact", "blog"]
+
   return (
     <div>
       {/*FOOTER*/}

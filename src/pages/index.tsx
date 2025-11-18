@@ -18,7 +18,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Inner>
-        <div className="h-[100vh]">
+        <div className="h-[100vh]" id="home">
           <div className="w-full justify-center flex">
             <Header text="IAN YEH" />
           </div>
